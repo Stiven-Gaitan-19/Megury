@@ -28,11 +28,11 @@ public class BillService {
         return billMapper.toDtoList(billRepository.findAll());
     }
 
-    private Optional<BillDTO> findById(Long id){
+    public Optional<BillDTO> findById(Long id){
         return billRepository.findById(id).map(billMapper::toDto);
     }
 
-    private void delete(BillDTO dto){
+    public void delete(BillDTO dto){
         billRepository.delete(billMapper.toEntity(dto));
     }
 
