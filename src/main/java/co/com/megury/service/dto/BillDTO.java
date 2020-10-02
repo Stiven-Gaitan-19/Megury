@@ -1,0 +1,34 @@
+package co.com.megury.service.dto;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+public class BillDTO implements Serializable {
+
+    private Long id;
+    private LocalDateTime createdAt;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    @Override
+    public String toString() {
+        return "BillDTO{" +
+                "id=" + id +
+                ", createdAt=" + createdAt +
+                '}';
+    }
+}
