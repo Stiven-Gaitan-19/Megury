@@ -31,7 +31,7 @@ public class ItemService {
         return itemRepository.findById(id).map(itemMapper::toDto);
     }
 
-    public void delete(ItemDTO dto){
-        itemRepository.delete(itemMapper.toEntity(dto));
+    public void delete(Long id){
+        itemRepository.deleteById(id);
     }
 }

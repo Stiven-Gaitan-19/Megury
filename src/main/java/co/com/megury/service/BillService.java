@@ -32,8 +32,8 @@ public class BillService {
         return billRepository.findById(id).map(billMapper::toDto);
     }
 
-    public void delete(BillDTO dto){
-        billRepository.delete(billMapper.toEntity(dto));
+    public void delete(Long id){
+        billRepository.deleteById(id);
     }
 
 }

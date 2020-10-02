@@ -31,7 +31,7 @@ public class FrequentCustomerService {
         return frequentCustomerRepository.findById(id).map(frequentCustomerMapper::toDto);
     }
 
-    public void delete(FrequentCustomerDTO dto){
-        frequentCustomerRepository.delete(frequentCustomerMapper.toEntity(dto));
+    public void delete(Long id){
+        frequentCustomerRepository.deleteById(id);
     }
 }

@@ -31,7 +31,7 @@ public class DepartmentService {
         return departmentRepository.findById(id).map( departmentMapper::toDto);
     }
 
-    public void delete(DepartmentDTO dto){
-        departmentRepository.delete(departmentMapper.toEntity(dto));
+    public void delete(Long id){
+        departmentRepository.deleteById(id);
     }
 }

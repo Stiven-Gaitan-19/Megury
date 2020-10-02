@@ -31,7 +31,7 @@ public class UserSystemService {
         return userSystemRepository.findById(id).map(userSystemMapper::toDto);
     }
 
-    public void delete(UserSystemDTO dto){
-        userSystemRepository.delete(userSystemMapper.toEntity(dto));
+    public void delete(Long id){
+        userSystemRepository.deleteById(id);
     }
 }

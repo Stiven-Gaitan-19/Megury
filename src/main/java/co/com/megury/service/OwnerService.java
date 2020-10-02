@@ -31,7 +31,7 @@ public class OwnerService {
         return ownerRepository.findById(id).map(ownerMapper::toDto);
     }
 
-    public void delete(OwnerDTO dto){
-        ownerRepository.delete(ownerMapper.toEntity(dto));
+    public void delete(Long id){
+        ownerRepository.deleteById(id);
     }
 }

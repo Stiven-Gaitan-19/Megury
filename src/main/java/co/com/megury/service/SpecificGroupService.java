@@ -31,7 +31,7 @@ public class SpecificGroupService {
         return specificGroupRepository.findById(id).map(specificGroupMapper::toDto);
     }
 
-    public void delete(SpecificGroupDTO dto){
-        specificGroupRepository.delete(specificGroupMapper.toEntity(dto));
+    public void delete(Long id){
+        specificGroupRepository.deleteById(id);
     }
 }

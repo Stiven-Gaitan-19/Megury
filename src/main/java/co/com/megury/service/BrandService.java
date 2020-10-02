@@ -31,7 +31,7 @@ public class BrandService {
         return brandRepository.findById(id).map(brandMapper::toDto);
     }
 
-    public void delete(BrandDTO dto){
-        brandRepository.delete(brandMapper.toEntity(dto));
+    public void delete(Long id){
+        brandRepository.deleteById(id);
     }
 }

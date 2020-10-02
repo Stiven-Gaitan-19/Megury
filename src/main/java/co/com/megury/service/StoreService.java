@@ -31,7 +31,7 @@ public class StoreService {
         return storeRepository.findById(id).map(storeMapper::toDto);
     }
 
-    public void delete(StoreDTO dto){
-        storeRepository.delete(storeMapper.toEntity(dto));
+    public void delete(Long id){
+        storeRepository.deleteById(id);
     }
 }

@@ -31,8 +31,8 @@ public class ProductService {
         return productRepository.findById(id).map(productMapper::toDto);
     }
 
-    public void delete(ProductDTO dto){
-        productRepository.delete(productMapper.toEntity(dto));
+    public void delete(Long id){
+        productRepository.deleteById(id);
     }
 
 }
