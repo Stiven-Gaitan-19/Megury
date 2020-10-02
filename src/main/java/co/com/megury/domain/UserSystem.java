@@ -1,5 +1,7 @@
 package co.com.megury.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -8,6 +10,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name="user_system")
+@JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
 public class UserSystem implements Serializable {
 
     @Id
@@ -28,6 +31,7 @@ public class UserSystem implements Serializable {
     private LocalDate createdAt;
 
     @OneToOne(mappedBy = "userSystem")
+    @JsonIgnore
     private Owner owner;
 
     public Long getId() {
@@ -91,5 +95,17 @@ public class UserSystem implements Serializable {
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "UserSystem{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", createdAt=" + createdAt +
+                ", owner=" + owner +
+                '}';
     }
 }
