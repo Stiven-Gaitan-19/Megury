@@ -10,7 +10,6 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name="user_system")
-@JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","fieldHandler"})
 public class UserSystem implements Serializable {
 
     @Id
